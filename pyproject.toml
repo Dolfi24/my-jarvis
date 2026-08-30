@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jarvis-voice-assistant"
+version = "0.1.0"
+description = "A safe, wake-word activated Windows desktop voice assistant."
+requires-python = ">=3.11"
+dependencies = [
+  "openai>=1.68.0,<3",
+  "python-dotenv>=1.0.1,<2",
+  "SpeechRecognition[audio]>=3.14.1,<4",
+  "pyttsx3>=2.98,<3",
+  "psutil>=6.1.1,<8",
+]
+
+[project.scripts]
+jarvis = "jarvis.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
